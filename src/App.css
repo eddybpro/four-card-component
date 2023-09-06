@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  --color-brand-1: hsl(234, 12%, 34%);
+  --color-brand-2: hsl(229, 6%, 66%);
+
+  --color-site-1: hsl(0, 0%, 98%);
+  --color-site-2: hsl(0, 0%, 100%);
+  --color-site-3: hsl(0, 78%, 62%);
+  --color-site-4: hsl(180, 62%, 55%);
+  --color-site-5: hsl(34, 97%, 64%);
+  --color-site-6: hsl(212, 86%, 64%);
+
+  --font-poppins: "Poppins", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-poppins);
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: var(--color-site-1);
+}
+
+.Head {
+  text-align: center;
+}
+
+.Head-Title {
+  font-size: 2.5rem;
+  color: var(--color-brand-1);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.Head-Title > span {
+  font-weight: 400;
+  color: var(--color-brand-2);
+}
+
+.Head-Para {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  margin-bottom: 2rem;
+}
+
+main {
+  padding-top: 4rem;
+}
+
+.Card {
+  background-color: var(--color-site-2);
+  margin-bottom: 2rem;
+  box-shadow: 2px 2px 12px var(--color-brand-2);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  position: relative;
+  height: 25rem;
+  border-top: 5px solid var(--color-site-4);
+}
+
+.Card:nth-of-type(2) {
+  border-color: var(--color-site-3);
+}
+.Card:nth-of-type(3) {
+  border-color: var(--color-site-5);
+}
+.Card:nth-of-type(4) {
+  border-color: var(--color-site-6);
+}
+
+.Card-Title {
+  font-size: 2rem;
+  counter-reset: var(--color-brand-1);
+  margin-bottom: 1.25rem;
+}
+
+.Card-Para {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+}
+
+.Card-Img {
+  position: absolute;
+  width: 6rem;
+  bottom: 3rem;
+  right: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .Head,
+  main {
+    max-width: 32rem;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .Head {
+    max-width: 55rem;
+  }
+
+  .Head-Title {
+    width: 40rem;
+    margin: 0 auto 2rem;
+  }
+
+  main {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Head-Title {
+    width: 60rem;
+    font-size: 4rem;
+  }
+  main {
+    max-width: 125rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Card {
+    margin-bottom: 0;
+    max-width: 40rem;
+  }
+
+  .Card:nth-of-type(1) {
+    transform: translateY(50%);
+  }
+  .Card:nth-of-type(2) {
+    grid-area: 1/2;
+  }
+  .Card:nth-of-type(3) {
+    grid-area: 2/2;
+  }
+  .Card:nth-of-type(4) {
+    transform: translateY(50%);
+  }
+}
